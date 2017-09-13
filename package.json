@@ -1,0 +1,36 @@
+{
+  "name": "wics.dvc",
+  "version": "1.0.0",
+  "description": "The apply website for wics at dvc",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app.js"
+  },
+  "dependencies": {
+    "bluebird": "^3.5.0",
+    "body-parser": "^1.18.1",
+    "cookie-parser": "^1.4.3",
+    "dotenv": "^4.0.0",
+    "ejs": "^2.5.7",
+    "express": "^4.15.4",
+    "mongoose": "^4.11.11",
+    "morgan": "^1.8.2",
+    "node-slack": "0.0.7",
+    "path": "^0.12.7",
+    "pg": "^7.3.0",
+    "serve-favicon": "^2.4.4",
+    "winston": "^2.3.1"
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wics-dvc/apply.wics_dvc.git"
+  },
+  "author": "wics",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/wics-dvc/apply.wics_dvc/issues"
+  },
+  "homepage": "https://github.com/wics-dvc/apply.wics_dvc#readme"
+}
