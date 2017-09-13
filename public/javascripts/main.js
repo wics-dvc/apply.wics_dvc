@@ -2,82 +2,11 @@
 $(document).ready(function() {
   $("#year").html( (new Date).getFullYear() );
 
-  $("#activities").click(function(){
-    if($("#social").is(":visible") == true) {
-      $("#social").hide();
-    } else {
-      $("#main").hide();
-    }   
-    $("#action").show();
-    return false;
-  }); 
-
-  $("#life").click(function(){
-    if($("#action").is(":visible") == true) {
-      $("#action").hide();
-    } else {
-      $("#main").hide();
-    }   
-    $("#social").show();
-    return false;
-  });
 
   //close menu if click on menu link --small devices only
   $('.nav a').click(function(){
     $('.navbar-collapse').collapse('hide');
   });
-
-  // get the country data from the plugin
-  var countryData = $.fn.intlTelInput.getCountryData(),
-    telInput = $("#contact"),
-    addressDropdown = $("#current-country"),
-          errorMsg = $("#error-msg"),
-          validMsg = $("#valid-msg");
-
-  // init plugin
-  telInput.intlTelInput({
-    utilsScript: "/javascripts/utils.js", // just for formatting/placeholders etc
-    preferredCountries: ['cm', 'fr']
-  });
-
-  // populate the country dropdown
-  $.each(countryData, function(i, country) {
-    addressDropdown.append($("<option></option>").attr("value", country.iso2).text(country.name));
-  });
-  // set it's initial value
-  var initialCountry = telInput.intlTelInput("getSelectedCountryData").iso2;
-  addressDropdown.val(initialCountry);
-
-  // listen to the telephone input for changes
-  telInput.on("countrychange", function(e, countryData) {
-    addressDropdown.val(countryData.iso2);
-  });
-
-  // listen to the address dropdown for changes
-  addressDropdown.change(function() {
-    telInput.intlTelInput("setCountry", $(this).val());
-  });
-
-  var reset = function() {
-      telInput.removeClass("error");
-      errorMsg.addClass("hide");
-      validMsg.addClass("hide");
-    };
-    // on blur: validate
-    telInput.blur(function() {
-      reset();
-      if ($.trim(telInput.val())) {
-        if (telInput.intlTelInput("isValidNumber")) {
-          validMsg.removeClass("hide");
-        } else {
-          telInput.addClass("error");
-          errorMsg.removeClass("hide");
-        }
-      }
-    });
-    // on keyup / change flag: reset
-    telInput.on("keyup change", reset);
-
 });
 
 
