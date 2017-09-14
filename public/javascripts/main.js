@@ -1,15 +1,7 @@
 
 $(document).ready(function() {
   $("#year").html( (new Date).getFullYear() );
-
-
-  //close menu if click on menu link --small devices only
-  $('.nav a').click(function(){
-    $('.navbar-collapse').collapse('hide');
-  });
 });
-
-
 
 //datepicker for date of birth
 $(function(){

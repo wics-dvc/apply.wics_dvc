@@ -1,10 +1,13 @@
+body {
+  background-color: #ff6f69;
+}
+
 .header {
   padding-top: 18rem;
   padding-bottom: 15rem;
   text-align: center;
-  border-bottom: 1px #ddd solid;
-  background-color: #d35400;
   color: white;
+  font-family: 'Montserrat', sans-serif;
 }
 
 .form-row {
@@ -28,8 +31,15 @@ input:invalid {
 }
 
 #join-button {
-  background-color: #d35400;
-  border-color: #d35400;
+  background-color: #ff6f69;
+  border-color: #ff6f69;
+}
+
+.main-container {
+  background-color:white;
+  border-radius: 25px;
+  font-family: 'Montserrat', sans-serif;
+  box-shadow: 2px 2px 2px rgba(0,0,0,.2);
 }
 
 .overlay-container {
