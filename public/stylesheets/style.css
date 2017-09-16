@@ -1,12 +1,12 @@
 body {
-  background-color: #ff6f69;
+  background-image: url(../images/seamless-circuit_480.png);
 }
 
 .header {
   padding-top: 18rem;
   padding-bottom: 15rem;
   text-align: center;
-  color: white;
+  color: black;
   font-family: 'Montserrat', sans-serif;
 }
 
@@ -31,8 +31,9 @@ input:invalid {
 }
 
 #join-button {
-  background-color: #ff6f69;
-  border-color: #ff6f69;
+  background-color: #88d8b0;
+  border-color: black;
+  color: black;
 }
 
 .main-container {
