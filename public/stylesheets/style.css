@@ -1,19 +1,16 @@
 body {
-  background-image: url(../images/seamless-circuit_480.png);
+    margin: 0;
+    padding: 0;
+    background:#eee;
+    font-family: 'Montserrat', sans-serif;
+    display:flex; /* You delete it on your web page */
+    justify-content:center;/* and this - delete */
 }
-
-.header {
-  padding-top: 18rem;
-  padding-bottom: 15rem;
-  text-align: center;
-  color: black;
-  font-family: 'Montserrat', sans-serif;
+a:hover,
+a:focus {
+    text-decoration: none;
+    color: #eee;
 }
-
-.form-row {
-  padding-top: 4rem;
-}
-
 input:invalid {
   border-color: #f44336;
 }
@@ -30,19 +27,225 @@ input:invalid {
   display: block;
 }
 
-#join-button {
-  background-color: #88d8b0;
-  border-color: black;
-  color: black;
+.login-card {
+    min-height: 100vh;
+    background-image: url('../images/seamless-circuit_480.png');
+    background-size: cover;
+    -moz-background-size: cover;
+    -ms-background-size: cover;
+    -wenkit-background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    position: relative;
+    border-radius: 5px;
+    -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 1px 6px 0 rgba(0, 0, 0, 0.12), 0 1px 6px 0 rgba(0, 0, 0, 0.12);
+    z-index: 2;
+    padding: 0;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    font-family: 'Montserrat', sans-serif!important;
+}
+.login-card:after {
+    background: linear-gradient(-135deg, rgb(63, 81, 181), rgb(233, 30, 99));
+    /* Login Card Arkaplan Rengi */
+    
+    background: -webkit-linear-gradient(-135deg, rgb(63, 81, 181), rgb(233, 30, 99));
+    /* Login Card Arkaplan Rengi */
+    
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    content: "";
+    opacity: 0.8;
+    z-index: 3;
+}
+.login-card > form {
+    z-index: 4;
+    position: relative;
+    padding: 0px 25px;
+    width: 100%;
+}
+.logo-container {
+    text-align: center;
+    position: relative;
+    opacity: 0.8;
+}
+.logo {
+    height: auto;
+    padding: 50px 0px;
+}
+/* form başlangıç stiller ------------------------------- */
+
+.group {
+    position: relative;
+    margin-bottom: 45px;
+}
+.group input {
+    font-size: 18px;
+    padding: 10px 10px 10px 10px;
+    display: block;
+    width: 100%;
+    border: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+    background: none;
+    color: #eee;
+}
+.group input:focus {
+    outline: none;
+}
+/* LABEL ======================================= */
+
+.group label {
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 18px;
+    font-weight: normal;
+    position: absolute;
+    pointer-events: none;
+    left: 5px;
+    top: 5px;
+    transition: 0.2s ease all;
+    -moz-transition: 0.2s ease all;
+    -webkit-transition: 0.2s ease all;
 }
 
-.main-container {
-  background-color:white;
-  border-radius: 25px;
-  font-family: 'Montserrat', sans-serif;
-  box-shadow: 2px 2px 2px rgba(0,0,0,.2);
+.label-body {
+    position: relative;
+    margin-bottom: 45px;
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 14px;
+    font-weight: normal;
+    left: 20px;
+    top: -17px;
 }
 
+
+
+/* active durum */
+
+.group input:focus ~ label,
+input:valid ~ label {
+    top: -20px;
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.7);
+}
+/* BOTTOM BARS ================================= */
+
+.bar {
+    position: relative;
+    display: block;
+    width: 100%;
+}
+.bar:before,
+.bar:after {
+    content: '';
+    height: 2px;
+    width: 0;
+    bottom: 1px;
+    position: absolute;
+    background: rgba(255, 255, 255, 0.7);
+    transition: 0.2s ease all;
+    -moz-transition: 0.2s ease all;
+    -webkit-transition: 0.2s ease all;
+}
+.bar:before {
+    left: 50%;
+}
+.bar:after {
+    right: 50%;
+}
+/* active durum bar */
+
+.group input:focus ~ .bar:before,
+.group input:focus ~ .bar:after {
+    width: 50%;
+}
+/* HIGHLIGHTER ================================== */
+
+.highlight {
+    position: absolute;
+    height: 0%;
+    width: 100px;
+    top: 25%;
+    left: 0;
+    pointer-events: none;
+    opacity: 0.5;
+}
+/* active durum */
+
+.group input:focus ~ .highlight {
+    -webkit-animation: inputHighlighter 0.3s ease;
+    -moz-animation: inputHighlighter 0.3s ease;
+    animation: inputHighlighter 0.3s ease;
+}
+/* form animasyon ================ */
+
+@-webkit-keyframes inputHighlighter {
+    from {
+        background: rgba(255, 255, 255, 0.7);
+    }
+    to {
+        width: 0;
+        background: transparent;
+    }
+}
+@-moz-keyframes inputHighlighter {
+    from {
+        background: rgba(255, 255, 255, 0.7);
+    }
+    to {
+        width: 0;
+        background: transparent;
+    }
+}
+@keyframes inputHighlighter {
+    from {
+        background: rgba(255, 255, 255, 0.7);
+    }
+    to {
+        width: 0;
+        background: transparent;
+    }
+}
+.input-icon {
+    font-size: 25px!important;
+    position: relative;
+}
+
+.span-input {
+    margin-left: 10px;
+    position: relative;
+    top: -5px;
+}
+
+.survey-button, 
+.submit-button{
+    background: linear-gradient(-135deg, rgb(63, 81, 181), rgb(233, 30, 99));
+    background: -webkit-linear-gradient(-135deg, rgb(63, 81, 181), rgb(233, 30, 99));
+    display: block;
+    text-align: center;
+    text-decoration: none;
+    color: #eee;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 100;
+    padding: 10px;
+    border-radius: 3px;
+    outline: none;
+    opacity: 0.8;
+}
+
+.form-row {
+  padding-top: 4rem;
+}
 .overlay-container {
   display: none;
 }
@@ -63,7 +266,6 @@ input:invalid {
   /* others */
   opacity: 0.7;
 }
-
 .message-container {
   background-color: white;
   position: fixed;
@@ -76,8 +278,7 @@ input:invalid {
   padding-top: 25px;
   border-radius: 2px;
 }
-
-/** Icons */
+/* Icons */
 .icon > svg { display: inline-block; width: 16px; height: 16px; vertical-align: middle; }
 .icon > svg path { fill: #828282; }
 
@@ -85,4 +286,12 @@ input:invalid {
 .footer-icon > svg path { fill: #FFFFFF; }
 
 .footer-icon-abs > svg { display: inline-block; width: 32px; height: 32px; vertical-align: middle; }
-.footer-icon-abs > svg path { fill: #EAEAEA; }
+.footer-icon-abs > svg path { fill: #EAEAEA; } 
+
+/* body {
+  background-image: url(../images/seamless-circuit_480.png);
+}
+
+
+
+
