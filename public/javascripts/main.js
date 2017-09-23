@@ -1,6 +1,14 @@
 
 $(document).ready(function() {
   $("#year").html( (new Date).getFullYear() );
+
+  //show the survey and hide the signup when button clicked
+  $("#survey-form").hide();
+  $(".survey-button").click(function(e){
+    $("#signup-form").slideUp(0);  
+    $("#survey-form").fadeIn(300); 
+  });
+
 });
 
 //datepicker for date of birth
@@ -68,7 +76,7 @@ $(function () {
     e.preventDefault();
     var requiredMatched = true;
     var form = $('form');
-    var inputs = $('input[data-required]');
+    var inputs = $('input[required]'); //var inputs =$('input[data-required]');
     
 
     inputs.each(function (i, el) {
@@ -80,14 +88,6 @@ $(function () {
     });
 
     if (requiredMatched) {
-
-      var formData = $('#form').serializeArray(); 
-      for (var i = 0; i < formData.length; i++) {  
-        if (formData[i].name === 'contact') {    
-          formData[i].value = $("#contact").intlTelInput('getNumber');    
-          break;  
-        } 
-      };
 
       $.ajax({
         url: form.attr('action'),

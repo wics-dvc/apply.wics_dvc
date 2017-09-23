@@ -2,17 +2,13 @@ let mongoose = require('mongoose');
 let Schema = mongoose.Schema;
 
 let surveySchema = new Schema({
-  'country': String,
-  'city': String,
-  'from': String,
-  'to': String,
-  'level': String,
-  'major': String,
-  'linkedinUsername': String,
+  'experience': [String],
   'interests': [String],
   'more-interests': String,
-  'experience': [String],
-  'more-experiences': String
+  'projects': [String],
+  'more-projects': [String],
+  'events': [String],
+  'more-events': [String]
 });
 
 module.exports = mongoose.model('Survey', surveySchema);
