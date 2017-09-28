@@ -10,11 +10,11 @@
 	    </div>
 	  </span>
 	  <section class="u-full-width header">
-	  	<img alt="WiCS logo" src="/images/wics-logo.png" width=210>
+	  	<!-- Logo -->
+          <div class="col-lg-12 logo-container">
+              <img width="200" class="logo" src="/images/WiCS-Logo-Transparent.png" alt="Logo" />
+          </div>
 	    <h1><b>Join</b> WiCS</h1>
-	    <h5>Explore real world software development technologies.</h5>
-	    <h5>Learn new programming languages and tools.</h5>
-	    <h5>Build cool projects and websites.</h5>
 	  </section>
 	  <div class="container main-container">
 	    <form action="/join" method="POST" id='form'>
@@ -63,10 +63,6 @@
 	      <div class="row form-row">
 	        <div class="eight columns offset-by-two">
 	          <h3>Describe yourself</h3>
-	          <p>We would love to know about where you're at and what you're interested in!
-	          <br>
-	          <small>- dvcoders is open to everyone, this has no effect on joining. Just some information to know you better.</small>
-	          </p>
 	        </div>
 	      </div>
 	      <div class="row form-row">
@@ -90,10 +86,35 @@
 	          </label>
 	        </div>
 	      </div>
+	      <div class="row form-row">
+	        <div class="eight columns offset-by-two">
+	          <label>How Aware are you on the issue women face in tech fields</label>
+	          <label class="u-full-width">
+	            <input type="radio" name="awareness" value="1">
+	            <span class="label-body">1 - They face no issues</span>
+	          </label>
+	          <label class="u-full-width">
+	            <input type="radio" name="awareness" value="2">
+	            <span class="label-body">2 - I am not that aware</span>
+	          </label>
+	          <label class="u-full-width">
+	            <input type="radio" name="awareness" value="3">
+	            <span class="label-body">3 - I'm sort of aware of the issues</span>
+	          </label>
+	          <label class="u-full-width">
+	            <input type="radio" name="awareness" value="4">
+	            <span class="label-body">4 - I'm aware they face issues but don't know what issues</span>
+	          </label>
+	          <label class="u-full-width">
+	            <input type="radio" name="awareness" value="5">
+	            <span class="label-body">5 - I am completely aware of those issues</span>
+	          </label>
+	        </div>
+	      </div>
 
 	      <div class="row form-row">
 	        <div class="eight columns offset-by-two">
-	          <label>What interests you?<br><small>Research the terms you don't know!</small></label>
+	          <label>What interests you?</label>
 	          <label class="u-full-width">
 	            <input type="checkbox" name="interests" value="front-end">
 	            <span class="label-body">Front-End Web Development - HTML/CSS/JavaScript</span>
@@ -101,10 +122,6 @@
 	          <label class="u-full-width">
 	            <input type="checkbox" name="interests" value="back-end">
 	            <span class="label-body">Back-End Web Development - Web Apps, APIs, Node.js, Flask</span>
-	          </label>
-	          <label class="u-full-width">
-	            <input type="checkbox" name="interests" value="dev-ops">
-	            <span class="label-body">Dev Ops - Linux servers, databases, load-balancers, etc.</span>
 	          </label>
 	          <label class="u-full-width">
 	            <input type="checkbox" name="interests" value="mobile">
@@ -117,10 +134,6 @@
 	          <label class="u-full-width">
 	            <input type="checkbox" name="interests" value="fundamentals">
 	            <span class="label-body">CS Fundamentals - Algorithms, Data Structures, ML</span>
-	          </label>
-	          <label class="u-full-width">
-	            <input type="checkbox" name="interests" value="functional">
-	            <span class="label-body">Functional Programming - Haskell, Scala, etc.</span>
 	          </label>
 	          <label class="u-full-width">
 	            <span class="label-body">More</span>
@@ -159,20 +172,20 @@
 	        <div class="eight columns offset-by-two">
 	          <label>What kind of events and activities are you interested in?</label>
 	          <label>
-	            <input type="checkbox" name="events" value="showcase">
-	            <span class="label-body">Showcase Night - show off projects we've made</span>
-	          </label>
-	          <label>
-	            <input type="checkbox" name="events" value="meetup">
-	            <span class="label-body">Dev Meetups - developer meetups in the Bay Area</span>
-	          </label>
-	          <label>
 	            <input type="checkbox" name="events" value="hackathon">
 	            <span class="label-body">Hackathons - Cal Hacks, Treehacks, or one at DVC!</span>
 	          </label>
 	          <label>
+	            <input type="checkbox" name="events" value="social">
+	            <span class="label-body">Social Events - fan of pizza or boba?</span>
+	          </label>
+	          <label>
+	            <input type="checkbox" name="events" value="meetup">
+	            <span class="label-body">Mentorship - need a mentor to guide you through DVC?</span>
+	          </label>	          
+	          <label>
 	            <input type="checkbox" name="events" value="infosession">
-	            <span class="label-body">Info sessions - Companies talking about jobs/internships</span>
+	            <span class="label-body">Info sessions - Hear people talking about tech jobs/internships</span>
 	          </label>
 	          <label class="u-full-width">
 	            <span class="label-body">More</span>
@@ -190,8 +203,8 @@
 	    </form>
 	  </div>
 
-	<% include footer %>
+	<!-- <% include footer %>
 	
-	<!-- <script type="text/javascript" src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script> -->
+	<script type="text/javascript" src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script> -->
   </body>
 </html>

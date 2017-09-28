@@ -43,6 +43,7 @@ router.post('/join', (req, res, next) => {
     User.findOneAndUpdate({email: userObj.email}, userObj, {upsert: true, new: true}).exec().then((user) => {
       if (!user.submittedSurvey) {
         return new Survey({
+          'awareness': body.awareness,
           'experience': body.experience,
           'interests': body.interests,
           'more-interests': body['more-interests'],
